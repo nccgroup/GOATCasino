@@ -1,0 +1,3 @@
+build/
+testrpc_output.txt
+.node-*
