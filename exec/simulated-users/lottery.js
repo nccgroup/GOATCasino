@@ -46,8 +46,8 @@ function GamblerSimulation(gambler_index, tickets_per_round=64, tickets_on_push=
 				}else{
 					this.simulationLog(ticket_number, "is not available")
 				}
-		    }
-	    }catch(err){
+			}
+		}catch(err){
 			this.simulationLog("in buyTickets", err) 
 		}
 	}
@@ -59,8 +59,8 @@ function GamblerSimulation(gambler_index, tickets_per_round=64, tickets_on_push=
 			try{
 				this.simulationLog("It's been a while since a winner has been found, checking if I won!")
 				await LotteryInstance.checkWin.sendTransaction({from: this.gambler_address})
-		    }catch(err){
-		    	console.log(err)
+			}catch(err){
+				console.log(err)
 				this.simulationLog("in checkWinner", err) 
 			}
 		//}
@@ -114,8 +114,8 @@ function GamblerSimulation(gambler_index, tickets_per_round=64, tickets_on_push=
 
 module.exports = async function(callback){
 
-    CasinoExchangeInstance = await CasinoExchange.deployed();
-    LotteryInstance = await Lottery.deployed();
+	CasinoExchangeInstance = await CasinoExchange.deployed();
+	LotteryInstance = await Lottery.deployed();
 	CasinoTokenInstance = CasinoToken.at(await CasinoExchangeInstance.casinoToken());
 
 	for (index=0;index<GOATConfig.accounts.gamblers.length;index++){

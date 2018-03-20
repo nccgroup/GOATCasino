@@ -34,7 +34,7 @@ function GamblerSimulation(gambler_index){
 
 module.exports = async function(callback){
 
-    FaucetInstance = await Faucet.deployed();
+	FaucetInstance = await Faucet.deployed();
 	CasinoTokenInstance = CasinoToken.at(await FaucetInstance.casinoToken());
 
 	for (index=0;index<GOATConfig.accounts.gamblers.length;index++){

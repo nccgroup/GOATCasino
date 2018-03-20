@@ -9,7 +9,7 @@ module.exports = async function(deployer, network, accounts) {
 	await deployer.deploy(Lottery, {from: GOATConfig.accounts.casinoOwner});
 	LotteryInstance = await Lottery.deployed()
 
-    var CasinoExchangeInstance = await CasinoExchange.deployed();
+	var CasinoExchangeInstance = await CasinoExchange.deployed();
 	CasinoTokenAddress = await CasinoExchangeInstance.casinoToken.call();
 
 	await LotteryInstance.initLottery.sendTransaction(CasinoTokenAddress, {from: GOATConfig.accounts.casinoOwner})

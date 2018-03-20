@@ -31,12 +31,12 @@ async function printbalances(){
 //This gets executed when you run `truffle exec exec/examples/example_interactions.js`
 module.exports = async function(callback){
 	//<contract>.deployed() will return an instance of a contract deployed at the address that Truffle remembers deploying to.
-    CasinoExchangeInstance = await CasinoExchange.deployed();
-    FaucetInstance = await Faucet.deployed();
-    VaultInstance = await Vault.deployed();
-    LotteryInstance = await Lottery.deployed();
+	CasinoExchangeInstance = await CasinoExchange.deployed();
+	FaucetInstance = await Faucet.deployed();
+	VaultInstance = await Vault.deployed();
+	LotteryInstance = await Lottery.deployed();
 
-    //Since CasinoToken gets created by CasinoExchange's constructor and not Truffle itself, Truffle doesn't know where it is. Therefore, we have to ask the CasinoExchange where the contract resides and tell Truffle.
+	//Since CasinoToken gets created by CasinoExchange's constructor and not Truffle itself, Truffle doesn't know where it is. Therefore, we have to ask the CasinoExchange where the contract resides and tell Truffle.
 	CasinoTokenInstance = CasinoToken.at(await CasinoExchangeInstance.casinoToken());
 
 	//I can check my current balance of ether

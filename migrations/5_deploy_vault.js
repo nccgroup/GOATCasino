@@ -14,7 +14,7 @@ module.exports = async function(deployer, network, accounts) {
 
 	await deployer.deploy(Vault, {from: GOATConfig.accounts.casinoOwner});
 
-    var CasinoExchangeInstance = await CasinoExchange.deployed();
+	var CasinoExchangeInstance = await CasinoExchange.deployed();
 	CasinoTokenAddress = await CasinoExchangeInstance.casinoToken.call();
 	CasinoTokenInstance = CasinoToken.at(CasinoTokenAddress);
 
