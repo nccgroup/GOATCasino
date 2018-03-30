@@ -8,7 +8,7 @@ This is under development so there may be a disappointing amount of games at the
 1. Install dependencies
 	1. The latest version of [node](https://nodejs.org/en/download/package-manager/)
 	1. `sudo apt install npm`
-	2. `sudo npm install -g truffle truffle-testrpc`
+	2. `sudo npm install -g truffle ganache-cli`
 
 2. Run `./start_challenge.sh` to start testrpc, deploy the casino to your local testnet, and begin simulating the other players
 3. Review the code in the `contracts/` directory to find vulnerabilities
