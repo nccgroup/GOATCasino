@@ -5,6 +5,7 @@ const GOATConfig = require('../GOATlib/GOATConfig');
 var CasinoExchange = global.artifacts.require("CasinoExchange");
 var Lottery = global.artifacts.require("Lottery");
 
-module.exports = async function(deployer, network, accounts) {
-	await deployer.deploy(CasinoExchange, {from: GOATConfig.accounts.casinoOwner});
+module.exports = function(deployer, network, accounts) {
+	//deploy Exchange, which also deploys the token contract
+	return deployer.deploy(CasinoExchange, {from: GOATConfig.accounts.casinoOwner});
 };
